@@ -67,7 +67,7 @@ namespace ConsoleApp1
         public void Delete()
         {
             Console.WriteLine("Список");
-            view(list);
+            View(list);
 
             void del(int b)
             {
@@ -105,7 +105,7 @@ namespace ConsoleApp1
                 del(c);
             }
             Zad();
-            view(list);
+            View(list);
         }
 
         public void Finde()
@@ -128,7 +128,7 @@ namespace ConsoleApp1
          public void ok()
         {
             Console.WriteLine("Список");
-            view(list);
+            View(list);
             Console.WriteLine("Введите ID дела, которое выполнили: ");
             int id = int.Parse(Console.ReadLine());
             foreach (BModel a in list)
@@ -138,34 +138,34 @@ namespace ConsoleApp1
                     a.Complet = "done";
                 }
             }
-            view(list);
+            View(list);
         }
         public void Sort()
         {
-            List<BModel> l = new List<BModel>();
-            List<BModel> l1 = new List<BModel>();
+            List<BModel> lIst = new List<BModel>();
+            List<BModel> lIst1 = new List<BModel>();
             foreach (BModel a in list)
             {
                 if (a.Priority == "Важно")
                 {
-                    l.Add(a);
+                    lIst.Add(a);
                 }
                 else
-                    l1.Add(a);
+                    lIst1.Add(a);
             }
-            view(l);
-            view(l1);
+            View(lIst);
+            View(lIst1);
         }
-        public void view(List<BModel> ll)
+        public void View(List<BModel> Kim)
         {
-            List<BModel> ll1 = ll;
-            foreach (BModel a in ll1)
+            List<BModel> Lou = Kim;
+            foreach (BModel a in Lou)
             {
                 a.Info();
             }
         }
 
-        public void safe()
+        public void Safe()
         {
             string path = $"{Environment.CurrentDirectory}\\TODO.json";
             FileWR file = new FileWR(path);

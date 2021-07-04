@@ -37,47 +37,47 @@ namespace ConsoleApp1
             Console.WriteLine("|        Введите необходимое действие к списку дел :                      |");
             Console.WriteLine("  ----------------------------------------------------------------------- ");
 
-            void ret() 
+            void Ret() 
             {
                 Console.WriteLine("Введите необходимое действие к списку дел : ");
                 string D = Console.ReadLine();
                 if (D != "список" && D != "добавить" && D != "удалить" && D != "поиск" && D != "ок" && D != "сортировка" && D != "закрыть")
                 {
                     Console.WriteLine("Ошибка,такого действия нет! ");
-                    ret();
+                    Ret();
                 }
                 switch (D)
                 {
                     case "список":
                         data.Spisok();
-                        ret();
+                        Ret();
                         break;
                     case "добавить":
                         data.Add();
-                        ret();
+                        Ret();
                         break;
                     case "удалить":
                         data.Delete();
-                        ret();
+                        Ret();
                         break;
                     case "поиск":
                         data.Finde();
-                        ret();
+                        Ret();
                         break;
                     case "ок":
                         data.ok();
-                        ret();
+                        Ret();
                         break;
                     case "сортировка":
                         data.Sort();
-                        ret();
+                        Ret();
                         break;
                     case "закрыть":
-                        data.safe();
+                        data.Safe();
                         break;
                 }
             }
-            ret();
+            Ret();
             
             
         }
